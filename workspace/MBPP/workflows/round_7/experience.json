@@ -1,0 +1,7 @@
+{
+    "father node": 4,
+    "modification": "Replace the ScEnsemble step with a custom operator step that generates a final solution by considering all previous attempts. We add a new prompt FINAL_CORRECTION_PROMPT for this purpose, and remove the unused ScEnsemble operator from the workflow call.",
+    "before": 0.8255813953488372,
+    "after": 0.8255813953488372,
+    "succeed": false
+}

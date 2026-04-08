@@ -53,6 +53,11 @@ EXPERIMENT_CONFIGS: Dict[str, ExperimentConfig] = {
         question_type="code",
         operators=["Custom", "CustomCodeGenerate", "ScEnsemble", "Test"],
     ),
+    "SWEAgent": ExperimentConfig(
+        dataset="SWEAgent",
+        question_type="code",
+        operators=["Custom", "ScEnsemble"],
+    ),
 }
 
 
@@ -118,7 +123,11 @@ if __name__ == "__main__":
             "Please add it to the configuration file or specify a valid model using the --exec_model_name flag. "
         )
 
-    download(["datasets"], force_download=args.if_force_download) # remove download initial_rounds in new version.
+    required_datasets = ["datasets"]
+    if args.dataset == "SWEAgent":
+        required_datasets.append("sweagent")
+
+    download(required_datasets, force_download=args.if_force_download) # remove download initial_rounds in new version.
 
     optimizer = Optimizer(
         dataset=config.dataset,

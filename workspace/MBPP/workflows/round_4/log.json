@@ -1,0 +1,107 @@
+[
+    {
+        "question": "Write a function that matches a string that has an 'a' followed by one or more 'b's. https://www.w3resource.com/python-exercises/re/python-re-exercise-3.php\nimport re\ndef text_match_zero_one(text):",
+        "right_answer": "Error: .\n Solution: import re\ndef text_match_zero_one(text):\n    pattern = 'a(b+)$'\n    return bool(re.match(pattern, text)).\n Test: def check():\n    assert text_match_zero_one(\"ac\")==False\n    assert text_match_zero_one(\"dc\")==False\n    assert text_match_zero_one(\"abbbba\")==True\n    assert text_match_zero_one(\"dsabbbba\")==True\n    assert text_match_zero_one(\"asbbbba\")==False\n    assert text_match_zero_one(\"abaaa\")==True\n\nCorrect Solution:import re\ndef text_match_zero_one(text):\n        patterns = 'ab+?'\n        if re.search(patterns,  text):\n                return True\n        else:\n                return False",
+        "model_output": "import re\ndef text_match_zero_one(text):\n    pattern = 'a(b+)$'\n    return bool(re.match(pattern, text))",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a python function to check whether the given number can be represented as the difference of two squares or not.\n\ndef dif_Square(n): ",
+        "right_answer": "Error: .\n Solution: def dif_Square(n):\n    if n < 0:\n        return False\n    return n % 4 == 0 or n % 4 == 1.\n Test: def check():\n    assert dif_Square(5) == True\n    assert dif_Square(10) == False\n    assert dif_Square(15) == True\n\nCorrect Solution:def dif_Square(n): \n    if (n % 4 != 2): \n        return True\n    return False",
+        "model_output": "def dif_Square(n):\n    if n < 0:\n        return False\n    return n % 4 == 0 or n % 4 == 1",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function that takes in a sorted array, its length (n), and an element and returns whether the element is the majority element in the given sorted array. (The majority element is the element that occurs more than n/2 times.)\n\ndef is_majority(arr, n, x):",
+        "right_answer": "Error: list index out of range.\n Solution: def is_majority(arr, n, x):\n    if n == 0:\n        return False\n    count = 0\n    for i in range(n):\n        if arr[i] == x:\n            count += 1\n    return count > n // 2.\n Test: def check():\n    assert is_majority([1, 2, 3, 3, 3, 3, 10], 7, 3) == True\n    assert is_majority([1, 1, 2, 4, 4, 4, 6, 6], 8, 4) == False\n    assert is_majority([1, 1, 1, 2, 2], 5, 1) == True\n    assert is_majority([1, 1, 2, 2], 5, 1) == False\n\nCorrect Solution:def is_majority(arr, n, x):\n\ti = binary_search(arr, 0, n-1, x)\n\tif i == -1:\n\t\treturn False\n\tif ((i + n//2) <= (n -1)) and arr[i + n//2] == x:\n\t\treturn True\n\telse:\n\t\treturn False\ndef binary_search(arr, low, high, x):\n\tif high >= low:\n\t\tmid = (low + high)//2 \n\t\tif (mid == 0 or x > arr[mid-1]) and (arr[mid] == x):\n\t\t\treturn mid\n\t\telif x > arr[mid]:\n\t\t\treturn binary_search(arr, (mid + 1), high, x)\n\t\telse:\n\t\t\treturn binary_search(arr, low, (mid -1), x)\n\treturn -1",
+        "model_output": "def is_majority(arr, n, x):\n    if n == 0:\n        return False\n    count = 0\n    for i in range(n):\n        if arr[i] == x:\n            count += 1\n    return count > n // 2",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function to remove odd characters in a string.\n\ndef remove_odd(str1):",
+        "right_answer": "Error: .\n Solution: def remove_odd(str1):\n    return ''.join((c for i, c in enumerate(str1) if i % 2 == 0)).\n Test: def check():\n    assert remove_odd(\"python\")==(\"yhn\")\n    assert remove_odd(\"program\")==(\"rga\")\n    assert remove_odd(\"language\")==(\"agae\")\n\nCorrect Solution:def remove_odd(str1):\n str2 = ''\n for i in range(1, len(str1) + 1):\n    if(i % 2 == 0):\n        str2 = str2 + str1[i - 1]\n return str2",
+        "model_output": "def remove_odd(str1):\n    return ''.join((c for i, c in enumerate(str1) if i % 2 == 0))",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a python function to count the number of equal numbers from three given integers.\n\ndef test_three_equal(x,y,z):",
+        "right_answer": "Error: .\n Solution: def test_three_equal(x, y, z):\n    return sum([x == y, y == z, x == z]).\n Test: def check():\n    assert test_three_equal(1,1,1) == 3\n    assert test_three_equal(-1,-2,-3) == 0\n    assert test_three_equal(1,2,2) == 2\n\nCorrect Solution:def test_three_equal(x,y,z):\n  result = set([x,y,z])\n  if len(result)==3:\n    return 0\n  else:\n    return 4-len(result)",
+        "model_output": "def test_three_equal(x, y, z):\n    return sum([x == y, y == z, x == z])",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function that takes in an integer n and calculates the harmonic sum of n-1.\n\ndef harmonic_sum(n):",
+        "right_answer": "Error: .\n Solution: def harmonic_sum(n):\n    if n <= 1:\n        return 0\n    return sum((1 / i for i in range(1, n))).\n Test: def check():\n    assert math.isclose(harmonic_sum(7), 2.5928571428571425, rel_tol=0.001)\n    assert math.isclose(harmonic_sum(4), 2.083333333333333, rel_tol=0.001)\n    assert math.isclose(harmonic_sum(19), 3.547739657143682, rel_tol=0.001)\n\nCorrect Solution:def harmonic_sum(n):\n  if n < 2:\n    return 1\n  else:\n    return 1 / n + (harmonic_sum(n - 1)) ",
+        "model_output": "def harmonic_sum(n):\n    if n <= 1:\n        return 0\n    return sum((1 / i for i in range(1, n)))",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function to find the surface area of a cylinder.\n\ndef surfacearea_cylinder(r,h):",
+        "right_answer": "Error: .\n Solution: import math\ndef surfacearea_cylinder(r, h):\n    if r < 0 or h < 0:\n        return 0\n    return round(2 * math.pi * r * h + 2 * math.pi * r ** 2, 2).\n Test: def check():\n    assert surfacearea_cylinder(10,5)==942.45\n    assert surfacearea_cylinder(4,5)==226.18800000000002\n    assert surfacearea_cylinder(4,10)==351.848\n\nCorrect Solution:def surfacearea_cylinder(r,h):\n  surfacearea=((2*3.1415*r*r) +(2*3.1415*r*h))\n  return surfacearea",
+        "model_output": "import math\ndef surfacearea_cylinder(r, h):\n    if r < 0 or h < 0:\n        return 0\n    return round(2 * math.pi * r * h + 2 * math.pi * r ** 2, 2)",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function to get the angle of a complex number.\nimport cmath\ndef angle_complex(a,b):",
+        "right_answer": "Error: .\n Solution: import cmath\ndef angle_complex(a, b):\n    z = complex(a, b)\n    return cmath.phase(z) if z != 0 else 0.\n Test: def check():\n    assert math.isclose(angle_complex(0,1j), 1.5707963267948966, rel_tol=0.001)\n    assert math.isclose(angle_complex(2,1j), 0.4636476090008061, rel_tol=0.001)\n    assert math.isclose(angle_complex(0,2j), 1.5707963267948966, rel_tol=0.001)\n\nCorrect Solution:import cmath\ndef angle_complex(a,b):\n  cn=complex(a,b)\n  angle=cmath.phase(a+b)\n  return angle",
+        "model_output": "import cmath\ndef angle_complex(a, b):\n    z = complex(a, b)\n    return cmath.phase(z) if z != 0 else 0",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function to find the n'th star number.\n\ndef find_star_num(n): ",
+        "right_answer": "Error: .\n Solution: def find_star_num(n):\n    if n <= 0:\n        return 0\n    return n * (2 * n - 1) * (2 * n - 2) // 6 + 1.\n Test: def check():\n    assert find_star_num(3) == 37\n    assert find_star_num(4) == 73\n    assert find_star_num(5) == 121\n\nCorrect Solution:def find_star_num(n): \n\treturn (6 * n * (n - 1) + 1) ",
+        "model_output": "def find_star_num(n):\n    if n <= 0:\n        return 0\n    return n * (2 * n - 1) * (2 * n - 2) // 6 + 1",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function which takes a tuple of tuples and returns the average value for each tuple as a list.\n\ndef average_tuple(nums):",
+        "right_answer": "Error: .\n Solution: def average_tuple(nums):\n    return [sum(t) / len(t) for t in nums if len(t) > 0].\n Test: def check():\n    assert average_tuple(((10, 10, 10, 12), (30, 45, 56, 45), (81, 80, 39, 32), (1, 2, 3, 4)))==[30.5, 34.25, 27.0, 23.25]\n    assert average_tuple(((1, 1, -5), (30, -15, 56), (81, -60, -39), (-10, 2, 3)))== [25.5, -18.0, 3.75]\n    assert average_tuple( ((100, 100, 100, 120), (300, 450, 560, 450), (810, 800, 390, 320), (10, 20, 30, 40)))==[305.0, 342.5, 270.0, 232.5]\n\nCorrect Solution:def average_tuple(nums):\n    result = [sum(x) / len(x) for x in zip(*nums)]\n    return result",
+        "model_output": "def average_tuple(nums):\n    return [sum(t) / len(t) for t in nums if len(t) > 0]",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a python function to find the sum of non-repeated elements in a given list.\n\ndef find_sum(arr): ",
+        "right_answer": "Error: .\n Solution: def find_sum(arr):\n    from collections import Counter\n    count = Counter(arr)\n    return sum((num for num, freq in count.items() if freq == 1)) + sum((num for num in arr if arr.count(num) == 1)).\n Test: def check():\n    assert find_sum([1,2,3,1,1,4,5,6]) == 21\n    assert find_sum([1,10,9,4,2,10,10,45,4]) == 71\n    assert find_sum([12,10,9,45,2,10,10,45,10]) == 78\n\nCorrect Solution:def find_sum(arr): \n    arr.sort() \n    sum = arr[0] \n    for i in range(len(arr)-1): \n        if (arr[i] != arr[i+1]): \n            sum = sum + arr[i+1]   \n    return sum",
+        "model_output": "def find_sum(arr):\n    from collections import Counter\n    count = Counter(arr)\n    return sum((num for num, freq in count.items() if freq == 1)) + sum((num for num in arr if arr.count(num) == 1))",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function to find the maximum absolute product between numbers in pairs of tuples within a given list.\n\ndef max_product_tuple(list1):",
+        "right_answer": "Error: .\n Solution: def max_product_tuple(list1):\n    max_product = float('-inf')\n    for i in range(len(list1)):\n        for j in range(i + 1, len(list1)):\n            product = abs(list1[i][0] * list1[j][0]) * abs(list1[i][1] * list1[j][1])\n            max_product = max(max_product, product)\n    return max_product if max_product != float('-inf') else 0.\n Test: def check():\n    assert max_product_tuple([(2, 7), (2, 6), (1, 8), (4, 9)] )==36\n    assert max_product_tuple([(10,20), (15,2), (5,10)] )==200\n    assert max_product_tuple([(11,44), (10,15), (20,5), (12, 9)] )==484\n\nCorrect Solution:def max_product_tuple(list1):\n    result_max = max([abs(x * y) for x, y in list1] )\n    return result_max",
+        "model_output": "def max_product_tuple(list1):\n    max_product = float('-inf')\n    for i in range(len(list1)):\n        for j in range(i + 1, len(list1)):\n            product = abs(list1[i][0] * list1[j][0]) * abs(list1[i][1] * list1[j][1])\n            max_product = max(max_product, product)\n    return max_product if max_product != float('-inf') else 0",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function to find the maximum sum possible by using the given equation f(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n).\n\ndef get_max_sum (n):",
+        "right_answer": "Error: .\n Solution: def get_max_sum(n, memo={}):\n    if n in memo:\n        return memo[n]\n    if n < 12:\n        return n\n    memo[n] = max(get_max_sum(n // 2, memo) + get_max_sum(n // 3, memo) + get_max_sum(n // 4, memo) + get_max_sum(n // 5, memo), n)\n    return memo[n].\n Test: def check():\n    assert get_max_sum(60) == 106\n    assert get_max_sum(10) == 12\n    assert get_max_sum(2) == 2\n\nCorrect Solution:def get_max_sum (n):\n\tres = list()\n\tres.append(0)\n\tres.append(1)\n\ti = 2\n\twhile i<n + 1:\n\t\tres.append(max(i, (res[int(i / 2)] \n\t\t\t\t\t\t+ res[int(i / 3)] +\n\t\t\t\t\t\t\tres[int(i / 4)]\n\t\t\t\t\t\t+ res[int(i / 5)])))\n\t\ti = i + 1\n\treturn res[n]",
+        "model_output": "def get_max_sum(n, memo={}):\n    if n in memo:\n        return memo[n]\n    if n < 12:\n        return n\n    memo[n] = max(get_max_sum(n // 2, memo) + get_max_sum(n // 3, memo) + get_max_sum(n // 4, memo) + get_max_sum(n // 5, memo), n)\n    return memo[n]",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a function to find nth polite number. geeksforgeeks.org/n-th-polite-number/\nimport math \ndef is_polite(n): ",
+        "right_answer": "Error: .\n Solution: def is_polite(n):\n    if n < 1:\n        return False\n    if n == 1:\n        return True\n    if n % 2 == 1:\n        return True\n    while n % 2 == 0:\n        n //= 2\n    return n != 1.\n Test: def check():\n    assert is_polite(7) == 11\n    assert is_polite(4) == 7\n    assert is_polite(9) == 13\n\nCorrect Solution:import math \ndef is_polite(n): \n\tn = n + 1\n\treturn (int)(n+(math.log((n + math.log(n, 2)), 2))) ",
+        "model_output": "def is_polite(n):\n    if n < 1:\n        return False\n    if n == 1:\n        return True\n    if n % 2 == 1:\n        return True\n    while n % 2 == 0:\n        n //= 2\n    return n != 1\ndef nth_polite_number(n):\n    count = 0\n    num = 1\n    while count < n:\n        if is_polite(num):\n            count += 1\n        num += 1\n    return num - 1\ndef nth_polite_number_v2(n):\n    count = 0\n    num = 1\n    while count < n:\n        if is_polite(num):\n            count += 1\n        num += 1\n    return num - 1",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Write a python function to count the number of rotations required to generate a sorted array. https://www.geeksforgeeks.org/count-of-rotations-required-to-generate-a-sorted-array/\n\ndef count_rotation(arr):   ",
+        "right_answer": "Error: Function count_rotation is not defined in the solution..\n Solution: .\n Test: def check():\n    assert count_rotation([3,2,1]) == 1\n    assert count_rotation([4,5,1,2,3]) == 2\n    assert count_rotation([7,8,9,1,2,3]) == 3\n    assert count_rotation([1,2,3]) == 0\n    assert count_rotation([1,3,2]) == 2\n\nCorrect Solution:def count_rotation(arr):   \n    for i in range (1,len(arr)): \n        if (arr[i] < arr[i - 1]): \n            return i  \n    return 0",
+        "model_output": "def count_rotations(arr):\n    if not arr:\n        return 0\n    n = len(arr)\n    low, high = (0, n - 1)\n    while low <= high:\n        if arr[low] <= arr[high]:\n            return low\n        mid = (low + high) // 2\n        next_mid = (mid + 1) % n\n        prev_mid = (mid - 1 + n) % n\n        if arr[mid] <= arr[next_mid] and arr[mid] <= arr[prev_mid]:\n            return mid\n        elif arr[mid] <= arr[high]:\n            high = mid - 1\n        else:\n            low = mid + 1\n    return 0",
+        "extracted_output": 0.0,
+        "extract_answer_code": "None"
+    }
+]

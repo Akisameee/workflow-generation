@@ -1,0 +1,7 @@
+{
+    "father node": 4,
+    "modification": "Added entry_point to the input for the custom operator during correction to provide context for function name validation, and updated CORRECTION_PROMPT to explicitly instruct checking the function name against the entry point.",
+    "before": 0.8255813953488372,
+    "after": 0.8255813953488372,
+    "succeed": false
+}

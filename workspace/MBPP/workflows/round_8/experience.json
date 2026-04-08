@@ -1,0 +1,7 @@
+{
+    "father node": 5,
+    "modification": "Updated the CORRECTION_PROMPT to provide a more structured and detailed instruction for code correction, including explicit steps for the model to follow, aiming to improve the quality of corrected code by guiding the model through a systematic error analysis and correction process.",
+    "before": 0.8255813953488372,
+    "after": 0.8255813953488372,
+    "succeed": false
+}

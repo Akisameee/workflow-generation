@@ -1,0 +1,7 @@
+{
+    "father node": 2,
+    "modification": "Modified the CORRECTION_PROMPT to explicitly instruct the model to generate corrected code that correctly solves the problem, in addition to fixing the errors and maintaining the function signature.",
+    "before": 0.8255813953488372,
+    "after": 0.813953488372093,
+    "succeed": false
+}

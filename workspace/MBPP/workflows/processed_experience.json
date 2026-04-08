@@ -1,0 +1,58 @@
+{
+    "4": {
+        "score": 0.8255813953488372,
+        "success": {},
+        "failure": {
+            "7": {
+                "modification": "Replace the ScEnsemble step with a custom operator step that generates a final solution by considering all previous attempts. We add a new prompt FINAL_CORRECTION_PROMPT for this purpose, and remove the unused ScEnsemble operator from the workflow call.",
+                "score": 0.8255813953488372
+            },
+            "5": {
+                "modification": "Added entry_point to the input for the custom operator during correction to provide context for function name validation, and updated CORRECTION_PROMPT to explicitly instruct checking the function name against the entry point.",
+                "score": 0.8255813953488372
+            }
+        }
+    },
+    "1": {
+        "score": 0.7209302325581395,
+        "success": {
+            "2": {
+                "modification": "Add a loop to test the generated code using the Test operator and retry with custom correction if it fails, limited to 2 attempts. This ensures the solution passes the public test cases.",
+                "score": 0.8255813953488372
+            }
+        },
+        "failure": {}
+    },
+    "2": {
+        "score": 0.8255813953488372,
+        "success": {},
+        "failure": {
+            "6": {
+                "modification": "Changed the input for the custom operator in the correction step from including test errors to including the test result code, and updated the correction prompt to instruct analysis based on both previous code and test result code for more effective error identification and correction.",
+                "score": 0.8255813953488372
+            },
+            "4": {
+                "modification": "Add ScEnsemble operator to select the best solution from all generated codes (initial and corrections) after the retry loop, improving the final output by leveraging self-consistency.",
+                "score": 0.8255813953488372
+            },
+            "9": {
+                "modification": "Modified the CORRECTION_PROMPT to explicitly instruct the model to generate corrected code that correctly solves the problem, in addition to fixing the errors and maintaining the function signature.",
+                "score": 0.813953488372093
+            },
+            "3": {
+                "modification": "Added ScEnsemble operator after generating the initial solution to improve code quality by selecting the most consistent solution from multiple generations. Modified the loop to generate 3 candidate solutions and use ScEnsemble to choose the best one before testing.",
+                "score": 0.8023255813953488
+            }
+        }
+    },
+    "5": {
+        "score": 0.8255813953488372,
+        "success": {},
+        "failure": {
+            "8": {
+                "modification": "Updated the CORRECTION_PROMPT to provide a more structured and detailed instruction for code correction, including explicit steps for the model to follow, aiming to improve the quality of corrected code by guiding the model through a systematic error analysis and correction process.",
+                "score": 0.8255813953488372
+            }
+        }
+    }
+}

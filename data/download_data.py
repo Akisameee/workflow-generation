@@ -12,6 +12,7 @@ import requests
 from tqdm import tqdm
 
 from scripts.logs import logger
+from data.sweagent_dataset import download_swebench_lite
 
 
 def download_file(url: str, filename: str) -> None:
@@ -82,6 +83,11 @@ datasets_to_download: Dict[str, Dict[str, str]] = {
 def download(required_datasets, force_download: bool = False):
     """Main function to process all selected datasets"""
     for dataset_name in required_datasets:
+        if dataset_name == "sweagent":
+            logger.info("Processing dataset: sweagent")
+            download_swebench_lite(force_download=force_download)
+            continue
+
         dataset = datasets_to_download[dataset_name]
         url = dataset["url"]
         filename = dataset["filename"]

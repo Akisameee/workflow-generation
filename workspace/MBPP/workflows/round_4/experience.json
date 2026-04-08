@@ -1,0 +1,7 @@
+{
+    "father node": 2,
+    "modification": "Add ScEnsemble operator to select the best solution from all generated codes (initial and corrections) after the retry loop, improving the final output by leveraging self-consistency.",
+    "before": 0.8255813953488372,
+    "after": 0.8255813953488372,
+    "succeed": false
+}
