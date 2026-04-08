@@ -1,0 +1,16 @@
+[
+    {
+        "question": "Carol and Jennifer are sisters from Los Angeles who love collecting signatures from celebrities. During their summer break from school, the sisters spend every afternoon collecting signatures. After five weeks, Carol and Jennifer compare their autograph books, counting up the number of signatures each sister has collected. Carol has 20 signatures in her book, and Jennifer has 44. The sisters have three more weeks of summer vacation, and they decide they want to reach 100 signatures between them by the end of the summer. How many signatures do the sisters need to collect to reach their goal?",
+        "right_answer": 36.0,
+        "model_output": "42",
+        "extracted_output": 42.0,
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "A team of 4 painters worked on a mansion for 3/8ths of a day every day for 3 weeks. How many hours of work did each painter put in?",
+        "right_answer": 189.0,
+        "model_output": "42",
+        "extracted_output": 42.0,
+        "extract_answer_code": "None"
+    }
+]

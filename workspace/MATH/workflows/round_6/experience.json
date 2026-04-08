@@ -1,0 +1,7 @@
+{
+    "father node": 1,
+    "modification": "Changed the instruction in the Custom operator call from an empty string to a prompt that encourages step-by-step reasoning and boxing the answer. This modification aims to improve the consistency and accuracy of the model's output by providing explicit formatting instructions.",
+    "before": 0.8487394957983193,
+    "after": 0.8235294117647058,
+    "succeed": false
+}

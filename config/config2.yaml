@@ -1,0 +1,16 @@
+models:
+  "deepseek-reasoner":
+    api_type: "openai"
+    base_url: "https://api.deepseek.com"
+    api_key: sk-7e80c68b2e2242ad9fe91d3a035674be
+    temperature: 0
+  "deepseek-chat":
+    api_type: "openai"
+    base_url: "https://api.deepseek.com"
+    api_key: sk-7e80c68b2e2242ad9fe91d3a035674be
+    temperature: 0
+  "gpt-4o-mini":
+    api_type: "openai"
+    base_url: "https://api.chatanywhere.tech/v1"
+    api_key: sk-s17gKfBLOAaXHFKGGGF4u4iPVHXicKWtLJqvROqltd17XwLR
+    temperature: 0

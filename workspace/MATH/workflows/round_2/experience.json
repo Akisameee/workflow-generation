@@ -1,0 +1,7 @@
+{
+    "father node": 1,
+    "modification": "Add a self-consistency ensemble step by using ScEnsemble to aggregate multiple initial solution attempts from Custom before final output. This enhances answer reliability by selecting the most consistent solution.",
+    "before": 0.8487394957983193,
+    "after": 0.8403361344537815,
+    "succeed": false
+}

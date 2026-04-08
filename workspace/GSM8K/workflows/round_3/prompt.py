@@ -1,0 +1,1 @@
+SOLVE_PROMPT = """Solve the problem carefully and return the final answer only.\n"""
